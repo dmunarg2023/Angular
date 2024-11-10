@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "myapp": {
+    "serie-list": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/myapp",
+            "outputPath": "dist/serie-list",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -31,14 +31,12 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico", "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
-            ],
+              ],
             "scripts": []
           },
           "configurations": {
@@ -69,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "myapp:build:production"
+              "buildTarget": "serie-list:build:production"
             },
             "development": {
-              "buildTarget": "myapp:build:development"
+              "buildTarget": "serie-list:build:development"
             }
           },
           "defaultConfiguration": "development"
